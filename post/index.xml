@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Even - A super concise theme for Hugo</title>
+    <link>https://mikezhaoiot.github.io/post/</link>
+    <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 29 Dec 2023 11:19:32 +0800</lastBuildDate><atom:link href="https://mikezhaoiot.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo 部署过程</title>
+      <link>https://mikezhaoiot.github.io/post/00-hugo%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Fri, 29 Dec 2023 11:19:32 +0800</pubDate>
+      
+      <guid>https://mikezhaoiot.github.io/post/00-hugo%E9%83%A8%E7%BD%B2/</guid>
+      <description>背景 在2023年12月27日浏览微信朋友圈的过程中，看到范冰朋友圈这样写到 : 打算重新恢复独立博客了，现在托管在 Github Pages 上，域名是 xdash.me</description>
+    </item>
+    
+  </channel>
+</rss>
