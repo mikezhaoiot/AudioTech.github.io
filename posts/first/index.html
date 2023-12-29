@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>hugo 部署过程 | 程序手艺人的博客</title>
+    <meta property="og:title" content="hugo 部署过程 - 程序手艺人的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2023-12-29T11:19:32&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2023-12-29T11:19:32&#43;08:00'>
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="hugo 部署过程">
+        
+    <meta name="author" content="">
+    <meta property="og:url" content="https://mikezhaoiot.github.io/posts/first/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://mikezhaoiot.github.io">
+                        程序手艺人的博客
+                    </a>
+                
+                
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://mikezhaoiot.github.io">Home</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">hugo 部署过程</h1>
+        </header>
+        
+  <time datetime="2023-12-29T03:19:32Z" class="post-meta meta-date dt-published">
+    2023-12-29
+  </time>
+
+
+
+        
+        
+        <div class="post-content">
+            <h1 id="背景">背景</h1>
+<p>在2023年12月27日浏览微信朋友圈的过程中，看到范冰朋友圈这样写到 :</p>
+<p>打算重新恢复独立博客了，现在托管在 Github Pages 上，域名是 xdash.me。</p>
+<p>正逐渐将 2008 以来的博文、公众号、杂志专栏、好书推荐、自制播客视频 shownotes 等迁移过来。</p>
+<p>为何恢复独立播客 &amp; 从 WordPress 搬迁到 Github Pages：</p>
+<ul>
+<li>
+<p>从「椒盐豆豉」这篇博文获得启发：https://blog.douchi.space/static-blog-half-year/#gsc.tab=0</p>
+</li>
+<li>
+<p>遵循「Setup and Forget」原则，希望在博客这件事上减少折腾，提升动力。避免每年空间续费、时不时被动迁移 IP、需要打开浏览器写誊写博文等麻烦；以后可在任意设备 Markdown 写 + Git 提交 + Github Actions 完成 hugo 渲染生成。</p>
+</li>
+<li>
+<p>静态，既加速读者访问，也让我自己不要动辄去想装插件、widget 的花活了。</p>
+</li>
+<li>
+<p>Github backed by Microsoft，稳定可靠。</p>
+</li>
+<li>
+<p>简单，专注在输出，尤其是输出文字之美本身。</p>
+</li>
+<li>
+<p>本地 repo 的草稿，可以直接在 Obsidian 方便地编辑；Obsidian 又是买了 Sync 同步的。所以可以移动状态下随时写，回到电脑前整理妥帖再 commit 发布。</p>
+</li>
+<li>
+<p>没有阅读计数，不被商业裹挟，写自己想写的文，交自己想交的人。</p>
+</li>
+<li>
+<p>部分回归初心，重拾 Geek 人格。</p>
+</li>
+</ul>
+<p>于是准备恢复写博客了，博客中包含技术、总结、生活，就像<a href="https://blog.codingnow.com/">云风的blog</a> ，随意写写，多总结，多记录，会有不一样的风景。</p>
+<h1 id="参考文章">参考文章</h1>
+<ul>
+<li><a href="https://qoant.com/2019/04/blog-with-hugo/">Hugo搭建个人博客</a></li>
+<li><a href="https://cuttontail.blog/blog/create-a-wesite-using-github-pages-and-hugo/"> GitHub Pages + Hugo 搭建个人博客</a></li>
+</ul>
+
+        </div>
+
+        
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            No tags
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://mikezhaoiot.github.io">程序手艺人的博客 By </a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://mikezhaoiot.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Latest articles</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://mikezhaoiot.github.io/posts/first/" title="hugo 部署过程" target="_blank">hugo 部署过程</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
+<div class="tagcloud">
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Meta</h3>
+        <ul class="widget-list">
+            <li><a href="https://mikezhaoiot.github.io/index.xml">RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

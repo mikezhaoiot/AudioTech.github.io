@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>程序手艺人的博客</title>
-    <link>https://mikezhaoiot.github.io/</link>
-    <description>Recent content on 程序手艺人的博客</description>
+    <title>Posts on 程序手艺人的博客</title>
+    <link>https://mikezhaoiot.github.io/posts/</link>
+    <description>Recent content in Posts on 程序手艺人的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Dec 2023 11:19:32 +0800</lastBuildDate><atom:link href="https://mikezhaoiot.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Dec 2023 11:19:32 +0800</lastBuildDate><atom:link href="https://mikezhaoiot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo 部署过程</title>
       <link>https://mikezhaoiot.github.io/posts/first/</link>
