@@ -49,7 +49,7 @@
 <meta itemprop="name" content="hugo 部署过程">
 <meta itemprop="description" content="背景 在2023年12月27日浏览微信朋友圈的过程中，看到范冰朋友圈这样写到 : 打算重新恢复独立博客了，现在托管在 Github Pages 上，域名是 xdash.me"><meta itemprop="datePublished" content="2023-12-29T11:19:32+08:00" />
 <meta itemprop="dateModified" content="2023-12-29T11:19:32+08:00" />
-<meta itemprop="wordCount" content="607">
+<meta itemprop="wordCount" content="806">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="hugo 部署过程"/>
 <meta name="twitter:description" content="背景 在2023年12月27日浏览微信朋友圈的过程中，看到范冰朋友圈这样写到 : 打算重新恢复独立博客了，现在托管在 Github Pages 上，域名是 xdash.me"/>
@@ -141,6 +141,7 @@
   <ul>
     <li><a href="#背景">背景</a></li>
     <li><a href="#blog主题">blog主题</a></li>
+    <li><a href="#文章发布">文章发布</a></li>
     <li><a href="#参考文章">参考文章</a></li>
   </ul>
 </nav>
@@ -181,7 +182,14 @@
 <p>于是准备恢复写博客了，博客中包含技术、总结、生活，就像<a href="https://blog.codingnow.com/">云风的blog</a> ，随意写写，多总结，多记录，会有不一样的风景。</p>
 <h1 id="blog主题">blog主题</h1>
 <ul>
-<li>针对event主题主要是字体和颜色的修改，参考<a href="https://blog.herbert.top/2020/07/09/how_change_hugo_even_font/">hugo-even 主题样式</a></li>
+<li>针对event主题主要是字体和颜色的修改，参考<a href="https://blog.herbert.top/2020/07/09/how_change_hugo_even_font/">hugo-even 主题样式</a>，相关改动可以参考 <a href="https://github.com/olOwOlo/hugo-theme-even/compare/master...mikezhaoiot:hugo-theme-even:master">字体和颜色修改提交</a></li>
+<li>如果even主题有更新，<a href="https://github.com/olOwOlo/hugo-theme-even/compare/master...mikezhaoiot:hugo-theme-even:master">mike hugo even</a></li>
+</ul>
+<h1 id="文章发布">文章发布</h1>
+<ul>
+<li>在blog目录，使用<code>hugo new post/some-content.md</code>创建markdown文件</li>
+<li>发布：在blog根目录执行<code>hugo</code>命令或者<code>hugo -t even</code>命令，自动根据md文件生成文章的静态页面，静态页面发布在根目录的public文件夹下面</li>
+<li>启动Hugo server，查看网站最新效果，在blog根目录执行如下命令: hugo server</li>
 </ul>
 <h1 id="参考文章">参考文章</h1>
 <ul>
