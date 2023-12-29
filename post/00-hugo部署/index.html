@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>hugo 部署过程 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mike" /><meta name="description" content="背景 在2023年12月27日浏览微信朋友圈的过程中，看到范冰朋友圈这样写到 : 打算重新恢复独立博客了，现在托管在 Github Pages 上，域名是 xdash.me" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
+
+
+<link rel="canonical" href="https://mikezhaoiot.github.io/post/00-hugo%E9%83%A8%E7%BD%B2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.520bdc11f0a308e1554318745d4ae5fef7ed0cf8c2d37a03674e5518e4a63e95.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="hugo 部署过程" />
+<meta property="og:description" content="背景 在2023年12月27日浏览微信朋友圈的过程中，看到范冰朋友圈这样写到 : 打算重新恢复独立博客了，现在托管在 Github Pages 上，域名是 xdash.me" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mikezhaoiot.github.io/post/00-hugo%E9%83%A8%E7%BD%B2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-12-29T11:19:32+08:00" />
+<meta property="article:modified_time" content="2023-12-29T11:19:32+08:00" />
+
+<meta itemprop="name" content="hugo 部署过程">
+<meta itemprop="description" content="背景 在2023年12月27日浏览微信朋友圈的过程中，看到范冰朋友圈这样写到 : 打算重新恢复独立博客了，现在托管在 Github Pages 上，域名是 xdash.me"><meta itemprop="datePublished" content="2023-12-29T11:19:32+08:00" />
+<meta itemprop="dateModified" content="2023-12-29T11:19:32+08:00" />
+<meta itemprop="wordCount" content="880">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="hugo 部署过程"/>
+<meta name="twitter:description" content="背景 在2023年12月27日浏览微信朋友圈的过程中，看到范冰朋友圈这样写到 : 打算重新恢复独立博客了，现在托管在 Github Pages 上，域名是 xdash.me"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">手艺人的blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">手艺人的blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">hugo 部署过程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-12-29 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#blog主题">blog主题</a></li>
+    <li><a href="#文章发布">文章发布</a></li>
+    <li><a href="#自动部署">自动部署</a></li>
+    <li><a href="#参考文章">参考文章</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="背景">背景</h1>
+<p>在2023年12月27日浏览微信朋友圈的过程中，看到范冰朋友圈这样写到 :</p>
+<p>打算重新恢复独立博客了，现在托管在 Github Pages 上，域名是 xdash.me。</p>
+<p>正逐渐将 2008 以来的博文、公众号、杂志专栏、好书推荐、自制播客视频 shownotes 等迁移过来。</p>
+<p>为何恢复独立播客 &amp; 从 WordPress 搬迁到 Github Pages：</p>
+<ul>
+<li>
+<p>从「椒盐豆豉」这篇博文获得启发：https://blog.douchi.space/static-blog-half-year/#gsc.tab=0</p>
+</li>
+<li>
+<p>遵循「Setup and Forget」原则，希望在博客这件事上减少折腾，提升动力。避免每年空间续费、时不时被动迁移 IP、需要打开浏览器写誊写博文等麻烦；以后可在任意设备 Markdown 写 + Git 提交 + Github Actions 完成 hugo 渲染生成。</p>
+</li>
+<li>
+<p>静态，既加速读者访问，也让我自己不要动辄去想装插件、widget 的花活了。</p>
+</li>
+<li>
+<p>Github backed by Microsoft，稳定可靠。</p>
+</li>
+<li>
+<p>简单，专注在输出，尤其是输出文字之美本身。</p>
+</li>
+<li>
+<p>本地 repo 的草稿，可以直接在 Obsidian 方便地编辑；Obsidian 又是买了 Sync 同步的。所以可以移动状态下随时写，回到电脑前整理妥帖再 commit 发布。</p>
+</li>
+<li>
+<p>没有阅读计数，不被商业裹挟，写自己想写的文，交自己想交的人。</p>
+</li>
+<li>
+<p>部分回归初心，重拾 Geek 人格。</p>
+</li>
+</ul>
+<p>于是准备恢复写博客了，博客中包含技术、总结、生活，就像<a href="https://blog.codingnow.com/">云风的blog</a> ，随意写写，多总结，多记录，会有不一样的风景。</p>
+<h1 id="blog主题">blog主题</h1>
+<ul>
+<li>针对event主题主要是字体和颜色的修改，参考<a href="https://blog.herbert.top/2020/07/09/how_change_hugo_even_font/">hugo-even 主题样式</a>，相关改动可以参考 <a href="https://github.com/olOwOlo/hugo-theme-even/compare/master...mikezhaoiot:hugo-theme-even:master">字体和颜色修改提交</a></li>
+<li>如果even主题有更新，<a href="https://github.com/olOwOlo/hugo-theme-even/compare/master...mikezhaoiot:hugo-theme-even:master">mike hugo even</a></li>
+</ul>
+<h1 id="文章发布">文章发布</h1>
+<ul>
+<li>在blog目录，使用<code>hugo new post/some-content.md</code>创建markdown文件</li>
+<li>发布：在blog根目录执行<code>hugo</code>命令或者<code>hugo -t even</code>命令，自动根据md文件生成文章的静态页面，静态页面发布在根目录的public文件夹下面</li>
+<li>启动Hugo server，查看网站最新效果，在blog根目录执行如下命令: hugo server</li>
+</ul>
+<h1 id="自动部署">自动部署</h1>
+<ul>
+<li>
+<p><a href="https://lucumt.info/post/hugo/using-github-action-to-auto-build-deploy/">GitHub Action实现Hugo博客在GitHub Pages自动部署</a></p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Github Action 自动部署存在问题，没办法提交public，导致无法及时更新到github pages</p>
+</li>
+</ul>
+<h1 id="参考文章">参考文章</h1>
+<ul>
+<li><a href="https://qoant.com/2019/04/blog-with-hugo/">Hugo搭建个人博客</a></li>
+<li><a href="https://cuttontail.blog/blog/create-a-wesite-using-github-pages-and-hugo/"> GitHub Pages + Hugo 搭建个人博客</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">mike</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2023-12-29
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:291732699@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/mikezhaoiot" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/471579140?spm_id_from=333.1007.0.0" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://mikezhaoiot.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>mike</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
