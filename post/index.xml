@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 29 Dec 2023 11:19:32 +0800</lastBuildDate><atom:link href="https://mikezhaoiot.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Dec 2023 15:34:27 +0800</lastBuildDate><atom:link href="https://mikezhaoiot.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的2023年终总结</title>
+      <link>https://mikezhaoiot.github.io/post/%E6%88%91%E7%9A%842023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 31 Dec 2023 15:34:27 +0800</pubDate>
+      
+      <guid>https://mikezhaoiot.github.io/post/%E6%88%91%E7%9A%842023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>hugo 部署过程</title>
       <link>https://mikezhaoiot.github.io/post/00-hugo%E9%83%A8%E7%BD%B2/</link>
