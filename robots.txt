@@ -1,2 +1,1 @@
 User-agent: *
-Sitemap: https://mikezhaoiot.github.io/sitemap.xml
