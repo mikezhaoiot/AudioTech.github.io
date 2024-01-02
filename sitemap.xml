@@ -37,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://mikezhaoiot.github.io/post/00-hugo%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2023-12-29T11:19:32+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://mikezhaoiot.github.io/posts/first/</loc>
     <lastmod>2023-12-29T11:19:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -52,6 +45,13 @@
   
   <url>
     <loc>https://mikezhaoiot.github.io/posts/</loc>
+    <lastmod>2023-12-29T11:19:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mikezhaoiot.github.io/post/00-hugo%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2023-12-29T11:19:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
