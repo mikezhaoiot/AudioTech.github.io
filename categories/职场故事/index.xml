@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>复盘 on Even - A super concise theme for Hugo</title>
-    <link>https://mikezhaoiot.github.io/tags/%E5%A4%8D%E7%9B%98/</link>
-    <description>Recent content in 复盘 on Even - A super concise theme for Hugo</description>
+    <title>职场故事 on Even - A super concise theme for Hugo</title>
+    <link>https://mikezhaoiot.github.io/categories/%E8%81%8C%E5%9C%BA%E6%95%85%E4%BA%8B/</link>
+    <description>Recent content in 职场故事 on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 31 Dec 2023 15:34:27 +0800</lastBuildDate><atom:link href="https://mikezhaoiot.github.io/tags/%E5%A4%8D%E7%9B%98/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Dec 2023 15:34:27 +0800</lastBuildDate><atom:link href="https://mikezhaoiot.github.io/categories/%E8%81%8C%E5%9C%BA%E6%95%85%E4%BA%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>我的2023年终总结</title>
       <link>https://mikezhaoiot.github.io/post/%E6%88%91%E7%9A%842023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
@@ -14,6 +14,24 @@
       
       <guid>https://mikezhaoiot.github.io/post/%E6%88%91%E7%9A%842023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
       <description>背景 这个个博客，所以写的年终总结颗粒度比较细。写这篇文章此时正在宝生月子中心看娃的间隙抽出时间写写。2023年工作比较轻松，但是生活过的比较</description>
+    </item>
+    
+    <item>
+      <title>2017年面试一些公司总结</title>
+      <link>https://mikezhaoiot.github.io/post/2017%E5%B9%B4%E9%9D%A2%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%AC%E5%8F%B8%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 22 Mar 2017 22:20:51 +0800</pubDate>
+      
+      <guid>https://mikezhaoiot.github.io/post/2017%E5%B9%B4%E9%9D%A2%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%AC%E5%8F%B8%E6%80%BB%E7%BB%93/</guid>
+      <description>&lt;p&gt;在云盛科技的工作感觉没有挑战性，于是在纠结许久之后，终于迈出第一步，面试了一些公司的经验总结。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2017年裸辞后的学习记录</title>
+      <link>https://mikezhaoiot.github.io/post/2017%E5%B9%B4%E8%A3%B8%E8%BE%9E%E5%90%8E%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 02 Mar 2017 10:21:11 +0800</pubDate>
+      
+      <guid>https://mikezhaoiot.github.io/post/2017%E5%B9%B4%E8%A3%B8%E8%BE%9E%E5%90%8E%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;每一天都有结束的时候，应该去珍惜每一天的时光，走过的路，做过的事，经常思考，提高才是值得高兴的！&lt;/p&gt;</description>
     </item>
     
     <item>
