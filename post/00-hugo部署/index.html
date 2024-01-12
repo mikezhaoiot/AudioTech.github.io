@@ -49,7 +49,7 @@
 <meta itemprop="name" content="博客hugo框架部署过程">
 <meta itemprop="description" content="背景 在2023年12月27日浏览微信朋友圈的过程中，看到范冰朋友圈这样写到 : 打算重新恢复独立博客了，现在托管在 Github Pages 上，域名是 xdash.me"><meta itemprop="datePublished" content="2023-12-29T11:19:32+08:00" />
 <meta itemprop="dateModified" content="2023-12-29T11:19:32+08:00" />
-<meta itemprop="wordCount" content="894">
+<meta itemprop="wordCount" content="1043">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="博客hugo框架部署过程"/>
 <meta name="twitter:description" content="背景 在2023年12月27日浏览微信朋友圈的过程中，看到范冰朋友圈这样写到 : 打算重新恢复独立博客了，现在托管在 Github Pages 上，域名是 xdash.me"/>
@@ -143,6 +143,7 @@
     <li><a href="#blog主题">blog主题</a></li>
     <li><a href="#文章发布">文章发布</a></li>
     <li><a href="#自动部署">自动部署</a></li>
+    <li><a href="#写文章格式">写文章格式</a></li>
     <li><a href="#更新记录">更新记录</a></li>
     <li><a href="#参考文章">参考文章</a></li>
   </ul>
@@ -202,14 +203,29 @@
 <p><input disabled="" type="checkbox"> Github Action 自动部署存在问题，没办法提交public，导致无法及时更新到github pages</p>
 </li>
 </ul>
+<h1 id="写文章格式">写文章格式</h1>
+<ul>
+<li>markdown 默认的图片插入方式，即 <code>![pic](pic.png)</code> 时，图片的宽度默认为编辑器的宽度，而且不能调节，这样当我们插入一些比较小的图片时也会占据很大的空间，非常影响文章的阅读体验。 最终的解决方案是</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;pic.png&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;50%&#34;</span> <span class="p">/&gt;&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样就可以实现图片居中显示了。参考文章<a href="https://www.yuweihung.com/posts/2021/hugo-blog-picture/">Hugo 博客插入图片的方法</a></p>
 <h1 id="更新记录">更新记录</h1>
 <ul>
 <li>20240102 :  blog-hugo 更改为私人仓库</li>
+<li>20240112 :  增加PicX图片图床服务</li>
 </ul>
 <h1 id="参考文章">参考文章</h1>
 <ul>
 <li><a href="https://qoant.com/2019/04/blog-with-hugo/">Hugo搭建个人博客</a></li>
 <li><a href="https://cuttontail.blog/blog/create-a-wesite-using-github-pages-and-hugo/"> GitHub Pages + Hugo 搭建个人博客</a></li>
+<li><a href="https://www.yuweihung.com/posts/2021/hugo-blog-picture/">Hugo 博客插入图片的方法</a></li>
 </ul>
 
     </div>
@@ -237,7 +253,11 @@
             <span class="prev-text nav-default">我的2023年终总结</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
+        <a class="next" href="/post/%E8%81%8C%E5%9C%BA%E7%94%9F%E6%B6%AF%E7%AC%AC%E4%B8%80%E7%A6%BB%E8%81%8C/">
+            <span class="next-text nav-default">职场生涯第一离职</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
       </nav>
     </footer>
   </article>
