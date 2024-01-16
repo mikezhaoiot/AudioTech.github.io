@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>解决了工作上一个发版阻塞问题 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mike" /><meta name="description" content="最近原本工作负责Audio模块开发任务很少了，主要原因是音箱业务需求量下降，内部立项的项目很少，自然而然的负责的音频模块需求就很少了，既然想继续待在这里工作，就得干活了，这不接了一个关于kermel power 模块相关的Jira bug，起初没有任何思路，随着时间以及项目经理的压力， 硬着头皮看了下代码，在测试同事不断地测试下，结合代码分析，终于在 1/16日下午有突破性的进展。 特此记录下整个过程。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.100.2 with theme even" />
+
+
+<link rel="canonical" href="https://mikezhaoiot.github.io/post/%E8%A7%A3%E5%86%B3%E4%BA%86%E5%B7%A5%E4%BD%9C%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%8F%91%E7%89%88%E9%98%BB%E5%A1%9E%E9%97%AE%E9%A2%98/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.520bdc11f0a308e1554318745d4ae5fef7ed0cf8c2d37a03674e5518e4a63e95.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="解决了工作上一个发版阻塞问题" />
+<meta property="og:description" content="最近原本工作负责Audio模块开发任务很少了，主要原因是音箱业务需求量下降，内部立项的项目很少，自然而然的负责的音频模块需求就很少了，既然想继续待在这里工作，就得干活了，这不接了一个关于kermel power 模块相关的Jira bug，起初没有任何思路，随着时间以及项目经理的压力， 硬着头皮看了下代码，在测试同事不断地测试下，结合代码分析，终于在 1/16日下午有突破性的进展。 特此记录下整个过程。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mikezhaoiot.github.io/post/%E8%A7%A3%E5%86%B3%E4%BA%86%E5%B7%A5%E4%BD%9C%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%8F%91%E7%89%88%E9%98%BB%E5%A1%9E%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-01-16T19:53:37+08:00" />
+<meta property="article:modified_time" content="2024-01-16T19:53:37+08:00" />
+
+<meta itemprop="name" content="解决了工作上一个发版阻塞问题">
+<meta itemprop="description" content="最近原本工作负责Audio模块开发任务很少了，主要原因是音箱业务需求量下降，内部立项的项目很少，自然而然的负责的音频模块需求就很少了，既然想继续待在这里工作，就得干活了，这不接了一个关于kermel power 模块相关的Jira bug，起初没有任何思路，随着时间以及项目经理的压力， 硬着头皮看了下代码，在测试同事不断地测试下，结合代码分析，终于在 1/16日下午有突破性的进展。 特此记录下整个过程。"><meta itemprop="datePublished" content="2024-01-16T19:53:37+08:00" />
+<meta itemprop="dateModified" content="2024-01-16T19:53:37+08:00" />
+<meta itemprop="wordCount" content="1065">
+<meta itemprop="keywords" content="bug," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="解决了工作上一个发版阻塞问题"/>
+<meta name="twitter:description" content="最近原本工作负责Audio模块开发任务很少了，主要原因是音箱业务需求量下降，内部立项的项目很少，自然而然的负责的音频模块需求就很少了，既然想继续待在这里工作，就得干活了，这不接了一个关于kermel power 模块相关的Jira bug，起初没有任何思路，随着时间以及项目经理的压力， 硬着头皮看了下代码，在测试同事不断地测试下，结合代码分析，终于在 1/16日下午有突破性的进展。 特此记录下整个过程。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">手艺人的blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">手艺人的blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">解决了工作上一个发版阻塞问题</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2024-01-16 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91/"> 日常开发 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <p>最近原本工作负责Audio模块开发任务很少了，主要原因是音箱业务需求量下降，内部立项的项目很少，自然而然的负责的音频模块需求就很少了，既然想继续待在这里工作，就得干活了，这不接了一个关于kermel power 模块相关的Jira bug，起初没有任何思路，随着时间以及项目经理的压力， 硬着头皮看了下代码，在测试同事不断地测试下，结合代码分析，终于在 1/16日下午有突破性的进展。 特此记录下整个过程。</p>
+<h1 id="1-问题背景">1. 问题背景</h1>
+<p>带有低功耗功能的音箱设备接入充电器之后，设备依旧进入低功耗，起初认为这是有问题的。</p>
+<h1 id="2-分析过程">2. 分析过程</h1>
+<h2 id="21-不同阶段充电器的区别">2.1 不同阶段充电器的区别</h2>
+<center><img src="https://cdn.jsdelivr.net/gh/mikezhaoiot/picx-images-hosting@master/20240116/image.6lcx4bqidos0.webp" width="80%" /></center>
+<ul>
+<li>DVT1 阶段的充电器， D+/D-未短接，接入设备之后，会识别为标准通讯的USB设备，充电电流会被限制在500mA</li>
+<li>DVT2 阶段以及PVT充电器， D+/D-已短接，接入设备之后，会识别为STANDARD_CHARGER，也就是标准的充电设备。</li>
+</ul>
+<h2 id="22--代码流程">2.2  代码流程</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//DVT1 设备充电器 
+</span></span><span class="line"><span class="cl">power_supply_register
+</span></span><span class="line"><span class="cl">    mt_charger_set_property
+</span></span><span class="line"><span class="cl">        //识别为非标准充电设备
+</span></span><span class="line"><span class="cl">        mtk_chg-&gt;chg_type == NONSTANDARD_CHARGER
+</span></span><span class="line"><span class="cl">        //vbus 标志位
+</span></span><span class="line"><span class="cl">        info-&gt;vbus_state = 1;
+</span></span><span class="line"><span class="cl">        //启动工作队列
+</span></span><span class="line"><span class="cl">        queue_delayed_work(system_power_efficient_wq,
+</span></span><span class="line"><span class="cl">                        &amp;info-&gt;wq_detcable, info-&gt;debounce_jiffies);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//工作队列中的执行动作， 就是根据vbus的状态通过内核通知链通知usb的插入拔出状态 
+</span></span><span class="line"><span class="cl">static void usb_extcon_detect_cable(struct work_struct *work)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">        struct usb_extcon_info *info = container_of(to_delayed_work(work),
+</span></span><span class="line"><span class="cl">                                                struct usb_extcon_info,
+</span></span><span class="line"><span class="cl">                                                wq_detcable);
+</span></span><span class="line"><span class="cl">        /* check and update cable state */
+</span></span><span class="line"><span class="cl">        if (info-&gt;vbus_state)
+</span></span><span class="line"><span class="cl">                extcon_set_state_sync(info-&gt;edev, EXTCON_USB, true);
+</span></span><span class="line"><span class="cl">        else
+</span></span><span class="line"><span class="cl">                extcon_set_state_sync(info-&gt;edev, EXTCON_USB, false);
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="c1">//可以看下usb收到插入拔出状态做的一些动作，关注的动作就是 pm_stay_awake(ssusb-&gt;dev); 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="n">pm_relax</span><span class="p">(</span><span class="n">ssusb</span><span class="o">-&gt;</span><span class="n">dev</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="c1">//drivers/usb/mtu3/mtu3_dr.c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">ssusb_extcon_register</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//注册usb 通知链 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">otg_sx</span><span class="o">-&gt;</span><span class="n">vbus_nb</span><span class="p">.</span><span class="n">notifier_call</span> <span class="o">=</span> <span class="n">ssusb_vbus_notifier</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ret</span> <span class="o">=</span> <span class="n">devm_extcon_register_notifier</span><span class="p">(</span><span class="n">ssusb</span><span class="o">-&gt;</span><span class="n">dev</span><span class="p">,</span> <span class="n">edev</span><span class="p">,</span> <span class="n">EXTCON_USB</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                        <span class="o">&amp;</span><span class="n">otg_sx</span><span class="o">-&gt;</span><span class="n">vbus_nb</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                                        
+</span></span><span class="line"><span class="cl"><span class="c1">//usb通知链的callback 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">static</span> <span class="kt">int</span> <span class="nf">ssusb_vbus_notifier</span><span class="p">(</span><span class="k">struct</span> <span class="nc">notifier_block</span> <span class="o">*</span><span class="n">nb</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">event</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">struct</span> <span class="nc">otg_switch_mtk</span> <span class="o">*</span><span class="n">otg_sx</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">                <span class="n">container_of</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span> <span class="k">struct</span> <span class="nc">otg_switch_mtk</span><span class="p">,</span> <span class="n">vbus_nb</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ssusb_set_mailbox</span><span class="p">(</span><span class="n">otg_sx</span><span class="p">,</span> <span class="n">MTU3_VBUS_VALID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ssusb_set_mailbox</span><span class="p">(</span><span class="n">otg_sx</span><span class="p">,</span> <span class="n">MTU3_VBUS_OFF</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">NOTIFY_DONE</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//ssusb_set_mailbox 执行的动作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="nl">MTU3_VBUS_OFF</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">mtu3_stop</span><span class="p">(</span><span class="n">mtu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">pm_relax</span><span class="p">(</span><span class="n">ssusb</span><span class="o">-&gt;</span><span class="n">dev</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">spin_lock_irqsave</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mtu</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">,</span> <span class="n">flags</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">mtu3_gadget_disconnect</span><span class="p">(</span><span class="n">mtu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">spin_unlock_irqrestore</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mtu</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">,</span> <span class="n">flags</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">mtu3_drp_to_none</span><span class="p">(</span><span class="n">mtu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ssusb</span><span class="o">-&gt;</span><span class="n">keep_ao</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">ssusb_phy_power_off</span><span class="p">(</span><span class="n">ssusb</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">ssusb_clks_disable</span><span class="p">(</span><span class="n">ssusb</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="nl">MTU3_VBUS_VALID</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">ssusb</span><span class="o">-&gt;</span><span class="n">is_host</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ssusb</span><span class="o">-&gt;</span><span class="n">keep_ao</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">ret</span> <span class="o">=</span> <span class="n">ssusb_clks_enable</span><span class="p">(</span><span class="n">ssusb</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">ret</span> <span class="o">=</span> <span class="n">ssusb_phy_power_on</span><span class="p">(</span><span class="n">ssusb</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">ssusb_ip_sw_reset</span><span class="p">(</span><span class="n">ssusb</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">ssusb_dev_sw_reset</span><span class="p">(</span><span class="n">ssusb</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ssusb_set_force_mode</span><span class="p">(</span><span class="n">ssusb</span><span class="p">,</span> <span class="n">MTU3_DR_FORCE_DEVICE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="cm">/* avoid suspend when works as device */</span>
+</span></span><span class="line"><span class="cl">                <span class="n">switch_port_to_device</span><span class="p">(</span><span class="n">ssusb</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//关键调用，用于告诉系统保持唤醒状态。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">pm_stay_awake</span><span class="p">(</span><span class="n">ssusb</span><span class="o">-&gt;</span><span class="n">dev</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">mtu3_start</span><span class="p">(</span><span class="n">mtu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="3-总结">3. 总结</h1>
+<p>根据代码分析以及测试， 得出的结论</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>设备否进入低功耗</strong></th>
+<th><strong>原因</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>接入  DVT1 充电器</strong></td>
+<td>不可以</td>
+<td>被识别为USB通讯设备，所以设备不会进入低功耗</td>
+</tr>
+<tr>
+<td><strong>接入 DVT2充电器</strong></td>
+<td>可以</td>
+<td>被识别为标准的充电器设备，所以在空闲状态下会进入低功耗</td>
+</tr>
+</tbody>
+</table>
+<p>这个Jira不是一个Bug， 代码原本的逻辑就是这样的， 插入充电器之后，识别的标准的充电器设备，并不会通知USB模块持有wakelock锁，所以在设备空闲状态下是可以进入低功耗的。</p>
+<p>为什么说插入充电器有时候进不去低功耗主要有两个原因，原因一使用的DVT1充电器，原因二有其他模块持有wakelock锁</p>
+<h1 id="4-继续">4. 继续</h1>
+<p>接这个机会可以深入学习下 kernel power 模块，之前存在的问题就是解决完一个问题之后，休息放松一下，就迅速解决下一个问题，导致原本投入熟悉这个模块的时间浪费掉了。</p>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/bug/">bug</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/%E6%88%91%E7%9A%842023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/">
+            <span class="next-text nav-default">我的2023年终总结</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:291732699@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/mikezhaoiot" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/471579140?spm_id_from=333.1007.0.0" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://mikezhaoiot.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>mike</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.191509a5c8442abdb6eb5020a332fd59bdd83a7e78a2d2241108df9113504292.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

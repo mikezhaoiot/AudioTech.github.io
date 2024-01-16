@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 31 Dec 2023 15:34:27 +0800</lastBuildDate><atom:link href="https://mikezhaoiot.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Jan 2024 19:53:37 +0800</lastBuildDate><atom:link href="https://mikezhaoiot.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决了工作上一个发版阻塞问题</title>
+      <link>https://mikezhaoiot.github.io/post/%E8%A7%A3%E5%86%B3%E4%BA%86%E5%B7%A5%E4%BD%9C%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%8F%91%E7%89%88%E9%98%BB%E5%A1%9E%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 16 Jan 2024 19:53:37 +0800</pubDate>
+      
+      <guid>https://mikezhaoiot.github.io/post/%E8%A7%A3%E5%86%B3%E4%BA%86%E5%B7%A5%E4%BD%9C%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%8F%91%E7%89%88%E9%98%BB%E5%A1%9E%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;最近原本工作负责Audio模块开发任务很少了，主要原因是音箱业务需求量下降，内部立项的项目很少，自然而然的负责的音频模块需求就很少了，既然想继续待在这里工作，就得干活了，这不接了一个关于kermel power 模块相关的Jira bug，起初没有任何思路，随着时间以及项目经理的压力， 硬着头皮看了下代码，在测试同事不断地测试下，结合代码分析，终于在 1/16日下午有突破性的进展。 特此记录下整个过程。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>我的2023年终总结</title>
       <link>https://mikezhaoiot.github.io/post/%E6%88%91%E7%9A%842023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
